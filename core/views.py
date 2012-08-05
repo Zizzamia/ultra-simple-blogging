@@ -15,7 +15,7 @@ from core.models import Post
 
 def home(request):
     """ Home page with all the post """
-    lastest_post = db.GqlQuery("SELECT * FROM Post")
+    lastest_post = db.GqlQuery("SELECT * FROM Post ORDER BY date DESC")
     return direct_to_template(request, 'index.html', { "lastest_post": lastest_post})
 
 def read_post(request, post_id):
