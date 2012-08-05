@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ post.title }}</h2>
+<small><i>{{ post.date.ctime }}</i></small>
+<p>{{ post.content|escape }}</p>
+<a href="/delete_post/{{ post.key }}/" title="" class="button button-remove">Delete post</a>
+<a href="/edit_post/{{ post.key }}/" title="" class="button">Edit post</a>
+{% endblock %}
+
